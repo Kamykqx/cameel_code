@@ -1,0 +1,44 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Subscribe{% endblock %}
+
+    {% block content %}
+    <div class="container">
+        <br><br>
+
+        {% if error_statement %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    Holy guacamole! <strong>{{ error_statement }}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+        {% endif %}
+        <h3>
+            To get info about new posts, subscribe to my Newsletter!
+        </h3>
+        <br><br>
+<form action="/form" method="POST">
+
+    <div class="form group">
+        <input type="text" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp"
+               placeholder="First Name" name="first_name" value="{{ first_name }}">
+    </div>
+<br>
+    <div class="form group">
+        <input type="text" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp"
+               placeholder="Last Name" name="last_name" value="{{ last_name }}">
+    </div>
+<br>
+
+  <div class="mb-3">
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+           placeholder="Email Address" name="email" value="{{ email }}">
+    <div id="emailHelp" class="form-text">Your email will never be shared with anyone except from that it'll be pushed to my github so it'll shared with everyone...</div>
+  </div>
+  <button type="submit" class="btn btn-secondary">Submit</button>
+</form>
+<br><br>
+        <h4>
+            Want to send me some suggestions or share your impressions? I'm happy to read it through!<br>
+            Send it to <strong>cameelcode@gmail.com</strong></h4>
+    {% endblock %}

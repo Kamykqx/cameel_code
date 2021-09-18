@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Cameel Friends{% endblock %}
+
+    {% block content%}
+    <div class="container">
+        <br><br>
+        <h2>Friends...</h2>
+        <br><br>
+        <form action="/friends" method="POST">
+            <input type="text" placeholder="Name" name="name">
+            <input type="submit" value="Add Name" class="btn btn-secondary">
+        </form>
+        <br><br>
+        {% for friend in friends %}
+        <h5>{{ friend.name }}</h5>
+        {% endfor %}
+    </div>
+
+    {% endblock %}

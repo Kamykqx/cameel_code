@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Thank You!{% endblock %}
+
+{% block content%}
+<br><br>
+<div class="container">
+    <h1>
+        Thank You for Subscribing!
+    </h1>
+    <br><br>
+    <small>{{ first_name }}, the Newsletter will be sent to email:</small>
+    <br><br>
+
+    {{ email }}
+    <br><br><br>
+
+    {{ subscribers[-1] }}
+
+    </div>
+{% endblock %}

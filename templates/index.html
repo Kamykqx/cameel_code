@@ -1,0 +1,33 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Cameel code{% endblock %}
+
+    {% block content %}
+
+    <div class="container">
+        <br><br>
+        <h1>Cameel code</h1>
+        <br><br><br>
+
+        <img src="{{ url_for('static', filename='images/distracted.png') }}" width="300">
+
+
+        <br/><br/><br/>
+        <h4>Hi there!<br> My name is Kamil Lapaj and I want to share with you my passion to programming in Python!<br><br>
+        At one point of my career I've realized I would like to change profession to something completely new and I decided that programming might be a good option to try.<br><br>
+        Beginning was not that great since most of tutorials teach you syntax at the first place. I would rather prefer to start from concepts that the field is built on.
+        But with the moment it started to be something more than just learning commands, I realized that this is it.<br><br>
+        Programming to me is a journey where one step is one small new skill in Python. Every step means nothing by itself but combined together, they lead to unlimited opportunities.<br><br>
+        Let me share my love to this (still new to me) field with you...<br><br>
+        On this page you will find: <br>
+
+            <li>little post from day-to-day learning new fields in <strong>'Blog'</strong> section,</li>
+            <li>samples of me trying to explain different topics in Python in the way I would like them to be presented to me when I was learning it, under <strong>'Topics'</strong> section,</li>
+            <li>my programs with links to the source code on github under <strong>'Programs'</strong>.</li>
+        Hope you can have some fun and be my journey buddy in learning...
+        </h4>
+    </div>
+
+    {% endblock %}
+
