@@ -45,14 +45,6 @@ def blog():
 
 @app.route('/subscribe', methods=['POST', 'GET'])
 def subscribe():
-
-    # TODO push data to database here or in form()?
-
-    if request.method == "POST":
-        first_name = request.form['first_name']
-        last_name = request.form['last_name']
-        email = request.form['email']
-
     return render_template("subscribe.html")
 
 # @app.route('/friends', methods=['POST', 'GET'])
@@ -103,9 +95,13 @@ def form():
 
 
     if request.method == "POST":
-        first_name_db = Friends(first_name=first_name)
-        last_name_db = Friends(last_name=last_name)
-        email_db = Friends(new_email=email)
+        first_name1 = request.form["first_name"]
+        first_name_db = Friends(first_name=first_name1)
+
+        # last_name1 = request.form["last_name"]
+        # last_name_db = Friends(last_name=last_name1)
+        # email1 = request.form["email"]
+        # email_db = Friends(new_email=email1)
 
         # TODO fix the line
         # when = Friends.date_created()
@@ -113,11 +109,11 @@ def form():
         # push to database
         try:
             db.session.add(first_name_db)
-            db.session.add(last_name_db)
-            db.session.add(email_db)
-            # db.session.add(when)
-            db.session.commit()
-            return redirect('/form')
+            # db.session.add(last_name_db)
+            # db.session.add(email_db)
+            # # db.session.add(when)
+            # db.session.commit()
+            # return redirect('/form')
 
         except:
             return "There was an error adding the Friend..."
