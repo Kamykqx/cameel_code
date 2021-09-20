@@ -8,7 +8,6 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-# TODO if necessary
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///friends.db'
 
 # initialize the database
@@ -44,10 +43,15 @@ def blog():
     return render_template("blog.html")
 
 
-@app.route('/subscribe')
+@app.route('/subscribe', methods=['POST', 'GET'])
 def subscribe():
 
     # TODO push data to database here or in form()?
+
+    if request.method == "POST":
+        first_name = request.form['first_name']
+        last_name = request.form['last_name']
+        email = request.form['email']
 
     return render_template("subscribe.html")
 
