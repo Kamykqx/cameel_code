@@ -8,6 +8,7 @@ from datetime import datetime
 
 app = Flask(__name__)
 
+# TODO figure how to do the sqlalchemy database and do it from scratch
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///friends.db'
 
 # initialize the database
